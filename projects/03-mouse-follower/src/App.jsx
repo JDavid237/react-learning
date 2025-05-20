@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import Obstacle from "./Obstacle"
 
 function App() {
   const [enabled, setEnabled] = useState(false)
@@ -32,10 +33,12 @@ function App() {
         top: -20,
         width: 40,
         height: 40,
-        transform: `translate(${position.x}px, ${position.y}px)`
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        zIndez: 2
       }}>
 
       </div>
+      <Obstacle enabled={enabled} position={position}/>
       <button onClick={() => setEnabled(!enabled)}>
         {enabled ? "Desactivar" : "Activar"} seguir puntero
       </button>
