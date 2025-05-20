@@ -13,8 +13,10 @@ const Obstacle = ({ enabled, position }) => {
         ) {
             const positionY = Math.random() * (document.body.offsetHeight - 60)
             const positionX = Math.random() * (document.body.offsetWidth - 50)
-            const random = Math.round(Math.random() * 255)
-            const randomColor = `rgb(${random}, ${random}, ${random})`
+            const r = 100 + Math.floor(Math.random() * 156) // entre 100 y 255
+            const g = 100 + Math.floor(Math.random() * 156)
+            const b = 100 + Math.floor(Math.random() * 156)
+            const randomColor = `rgb(${r}, ${g}, ${b})`
 
             setObstacle({ x: positionX, y: positionY })
             setColor(randomColor)
@@ -40,10 +42,11 @@ const Obstacle = ({ enabled, position }) => {
                 display: "flex",
                 placeContent: "center",
                 fontSize: "35px",
+                textShadow: "3px 3px 2.5px black",
                 margin: "25%",
                 color: "red",
                 fontWeight: "bold",
-                
+
             }}>{count}</span></div>}
         </>
     )
